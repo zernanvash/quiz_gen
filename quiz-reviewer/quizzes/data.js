@@ -939,5 +939,3 @@ const QUIZZES = [
     ],
   },
 ];
-
-export default QUIZZES;
