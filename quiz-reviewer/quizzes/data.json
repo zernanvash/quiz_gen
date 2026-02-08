@@ -559,17 +559,17 @@
   },
 
   {
-    "id": "software-engineering-2-reviewer",
-    "title": "Software Engineering 2 Reviewer",
-    "description": "Focuses on SDLC models, Agile methodologies, systematic design, and institutional core values.",
-    "icon": "⚙️",
+    "id": "software-engineering-reviewer",
+    "title": "Software Engineering & Institutional Values Reviewer",
+    "description": "A 50-item multiple choice reviewer covering software engineering concepts, development models, and institutional vision, mission, objectives, and values.",
+    "icon": "💻",
     "questions": [
       {
         "type": "multiple_choice",
         "question": "The vision of the institution emphasizes:",
         "options": {
           "A": "Generating high profits",
-          "B": "Following strict routines",
+          "B": "Following strict routines without adaptation",
           "C": "Creating a community responsive to the changing world",
           "D": "Focusing only on local standards"
         },
@@ -674,6 +674,7 @@
         },
         "correctAnswer": "A"
       },
+  
       {
         "type": "multiple_choice",
         "question": "Which core value emphasizes the ability to perform tasks effectively?",
@@ -722,13 +723,14 @@
         "type": "multiple_choice",
         "question": "The mission of the institution is to:",
         "options": {
-          "A": "Prepare individuals with education consistent with societal needs",
+          "A": "Prepare individuals with the best that education can offer, consistent with societal needs",
           "B": "Promote international ranking only",
           "C": "Focus on financial gain",
           "D": "Train only technology experts"
         },
         "correctAnswer": "A"
       },
+  
       {
         "type": "multiple_choice",
         "question": "A software project with poor requirements analysis may result in:",
@@ -784,6 +786,7 @@
         },
         "correctAnswer": "B"
       },
+  
       {
         "type": "multiple_choice",
         "question": "Clear communication among developers is:",
@@ -839,6 +842,7 @@
         },
         "correctAnswer": "B"
       },
+  
       {
         "type": "multiple_choice",
         "question": "Proper requirement analysis ensures:",
@@ -865,7 +869,7 @@
         "type": "multiple_choice",
         "question": "The EOMS Policy emphasizes:",
         "options": {
-          "A": "Continuous innovation, satisfactory service, and compliance",
+          "A": "Continuous innovation, satisfactory service, and compliance with applicable requirements",
           "B": "Reducing teacher involvement",
           "C": "Focusing only on profits",
           "D": "Ignoring technological developments"
@@ -885,26 +889,15 @@
       },
       {
         "type": "multiple_choice",
-        "question": "Following software standards ensures:",
+        "question": "A primary goal of software engineering is:",
         "options": {
-          "A": "Software is inconsistent",
-          "B": "Compatibility and maintainability",
-          "C": "More bugs",
-          "D": "Confusing design"
-        },
-        "correctAnswer": "B"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Clear labels and consistent workflow demonstrate:",
-        "options": {
-          "A": "Poor planning",
-          "B": "Good SE practice",
-          "C": "Random errors",
-          "D": "No advantage"
+          "A": "Create software only for fun",
+          "B": "Deliver high-quality software that meets requirements",
+          "C": "Write as many lines of code as possible",
+          "D": "Design hardware"
         },
         "correctAnswer": "B"
       }
     ]
-  }
+  }  
 ]
