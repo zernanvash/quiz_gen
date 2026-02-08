@@ -10,15 +10,14 @@ let quizData = null;
 // Load quizzes from external file
 async function loadQuizzes() {
     try {
-        // Load the quiz data
-        const response = await fetch('quizzes/data.js');
-        const text = await response.text();
+        // 1. Fetch the .json file instead of .js
+        const response = await fetch('quizzes/data.json');
         
-        // Execute the script to get QUIZZES
-        eval(text);
+        // 2. Parse the JSON data directly
+        allQuizzes = await response.json();
         
-        if (typeof QUIZZES !== 'undefined' && QUIZZES.length > 0) {
-            displayQuizList(QUIZZES);
+        if (allQuizzes && allQuizzes.length > 0) {
+            displayQuizList(allQuizzes);
         } else {
             showEmptyState();
         }
@@ -60,32 +59,23 @@ function showEmptyState() {
     `;
 }
 
-// Select and start a quiz
 function selectQuiz(quizId) {
-    // Find the quiz in the global QUIZZES array
-    const quiz = QUIZZES.find(q => q.id === quizId);
+    // 3. Reference the global allQuizzes variable we just populated
+    const quiz = allQuizzes.find(q => q.id === quizId);
     if (!quiz) return;
     
-    // Deep clone the quiz to avoid modifying the original
     quizData = JSON.parse(JSON.stringify(quiz));
     currentQuestionIndex = 0;
     userAnswers = new Array(quizData.questions.length).fill(null);
     
-    // Create Quiz instance
     currentQuiz = new Quiz(quizData.questions, quizData.title);
-    
-    // Update UI
     document.getElementById('quiz-title').textContent = quizData.title;
     
-    // Show quiz screen
     showScreen('quiz-screen');
     
-    // Start timer
     startTime = new Date();
     startTimer();
     currentQuiz.start();
-    
-    // Display first question
     displayQuestion();
 }
 
