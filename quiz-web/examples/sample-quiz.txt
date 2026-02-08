@@ -1,0 +1,37 @@
+SAMPLE PROGRAMMING QUIZ
+
+What is Python?
+A. A snake
+B. A programming language
+C. A database system
+D. A web browser
+
+Which of these is a valid variable name in Python?
+A. 123variable
+B. my-variable
+C. my_variable
+D. my variable
+
+True or False: Python is a compiled language. (T/F)
+
+What keyword is used to define a function in Python? (Short answer)
+
+The _____ loop is used for iteration in Python.
+
+Which data structure is ordered and mutable in Python?
+A. Tuple
+B. Set
+C. List
+D. Dictionary
+
+True or False: Lists in Python are immutable. (T/F)
+
+What does HTML stand for? (Short answer)
+
+Python uses _____ for memory management.
+
+Which of the following is NOT a Python data type?
+A. int
+B. float
+C. char
+D. str

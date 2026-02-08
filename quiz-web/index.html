@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizCraft - Interactive Quiz Generator</title>
+    <meta name="description" content="Create and take interactive quizzes from your study materials. Upload DOCX, PDF, or text files.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Pattern -->
+    <div class="bg-pattern"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">QuizCraft</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="https://github.com/yourusername/quizcraft" target="_blank" class="nav-link github-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Free & Open Source
+            </div>
+            <h1 class="hero-title">
+                Transform Your Study Materials Into
+                <span class="highlight">Interactive Quizzes</span>
+            </h1>
+            <p class="hero-description">
+                Upload DOCX, PDF, or text files containing questions and answers. 
+                Get instant quizzes with automatic grading, detailed feedback, and downloadable results.
+            </p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="scrollToQuiz()">
+                    <span>Start Creating Quiz</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" onclick="showDemo()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="10 8 16 12 10 16 10 8"/>
+                    </svg>
+                    <span>Watch Demo</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="card-icon">✓</div>
+                <div class="card-text">Multiple Choice</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-icon">◯</div>
+                <div class="card-text">True/False</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-icon">✎</div>
+                <div class="card-text">Short Answer</div>
+            </div>
+            <div class="floating-card card-4">
+                <div class="card-icon">___</div>
+                <div class="card-text">Fill-in-Blank</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need for effective learning</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Smart Question Parser</h3>
+                <p>Automatically detects and parses multiple choice, true/false, short answer, and fill-in-the-blank questions from your documents.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Grading</h3>
+                <p>Get immediate feedback with automatic scoring, percentage calculation, and time tracking for every quiz attempt.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Detailed Analytics</h3>
+                <p>Review your performance with comprehensive reports showing correct answers, your responses, and areas for improvement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3>Export Results</h3>
+                <p>Download your quiz results in JSON or readable text format. Perfect for tracking progress over time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Multiple Formats</h3>
+                <p>Support for DOCX, PDF, and plain text files. Upload your existing study materials without conversion.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>All processing happens in your browser. Your files never leave your device - 100% private and secure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Get started in three simple steps</p>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Upload Your File</h3>
+                    <p>Drop your DOCX, PDF, or TXT file containing questions. We support standard quiz formats with automatic detection.</p>
+                </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Take the Quiz</h3>
+                    <p>Answer questions in a clean, distraction-free interface. Save your progress and come back anytime.</p>
+                </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Review & Learn</h3>
+                    <p>Get instant results with detailed feedback. See correct answers, track your score, and export your results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Quiz Application -->
+    <section class="quiz-app" id="quiz-app">
+        <div class="app-container">
+            <!-- Upload Screen -->
+            <div class="screen" id="upload-screen">
+                <div class="upload-area">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h2>Upload Your Quiz File</h2>
+                    <p>Drop your file here or click to browse</p>
+                    <input type="file" id="file-input" accept=".docx,.pdf,.txt,.text" hidden>
+                    <button class="btn btn-upload" onclick="document.getElementById('file-input').click()">
+                        Choose File
+                    </button>
+                    <div class="supported-formats">
+                        <span class="format-badge">.DOCX</span>
+                        <span class="format-badge">.PDF</span>
+                        <span class="format-badge">.TXT</span>
+                    </div>
+                </div>
+                
+                <!-- Or paste text -->
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="paste-area">
+                    <h3>Paste Your Questions</h3>
+                    <textarea id="paste-input" placeholder="Paste your quiz questions here...
+
+Example format:
+What is Python?
+A. A snake
+B. A programming language
+C. A database
+D. A framework
+
+True or False: Python is compiled. (T/F)
+
+What does HTML stand for? (Short answer)
+"></textarea>
+                    <button class="btn btn-primary" onclick="parseTextInput()">
+                        Create Quiz from Text
+                    </button>
+                </div>
+
+                <!-- Answer Key Upload (Optional) -->
+                <div class="answer-key-section">
+                    <h3>Answer Key (Optional)</h3>
+                    <p>Upload or paste correct answers to enable grading</p>
+                    <div class="answer-key-options">
+                        <input type="file" id="answer-key-input" accept=".txt,.json" hidden>
+                        <button class="btn btn-secondary" onclick="document.getElementById('answer-key-input').click()">
+                            Upload Answer Key
+                        </button>
+                        <button class="btn btn-secondary" onclick="showAnswerKeyPaste()">
+                            Paste Answers
+                        </button>
+                    </div>
+                    <div id="answer-key-paste" class="answer-key-paste" style="display: none;">
+                        <textarea id="answer-paste-input" placeholder="One answer per line:
+B
+True
+Hypertext Markup Language
+..."></textarea>
+                        <button class="btn btn-primary-sm" onclick="parseAnswerKey()">Apply Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="screen hidden" id="quiz-screen">
+                <div class="quiz-header">
+                    <div class="quiz-info">
+                        <h2 id="quiz-title">Quiz</h2>
+                        <div class="quiz-meta">
+                            <span class="meta-item">
+                                <span class="meta-icon">📝</span>
+                                <span id="question-count">0 questions</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-icon">⏱️</span>
+                                <span id="timer">00:00</span>
+                            </span>
+                        </div>
+                    </div>
+                    <button class="btn btn-text" onclick="exitQuiz()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                        Exit Quiz
+                    </button>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <div class="question-container" id="question-container">
+                    <!-- Questions will be inserted here -->
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn btn-secondary" id="prev-btn" onclick="previousQuestion()" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Previous
+                    </button>
+                    <span class="question-indicator" id="question-indicator">1 / 10</span>
+                    <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">
+                        Next
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="screen hidden" id="results-screen">
+                <div class="results-header">
+                    <div class="score-circle">
+                        <svg class="score-ring" width="200" height="200">
+                            <circle class="ring-bg" cx="100" cy="100" r="85"/>
+                            <circle class="ring-fill" id="score-ring" cx="100" cy="100" r="85"/>
+                        </svg>
+                        <div class="score-text">
+                            <div class="score-percent" id="score-percent">0%</div>
+                            <div class="score-label">Score</div>
+                        </div>
+                    </div>
+                    <h2>Quiz Complete!</h2>
+                    <div class="results-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Correct</span>
+                            <span class="summary-value correct" id="correct-count">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Incorrect</span>
+                            <span class="summary-value incorrect" id="incorrect-count">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Time</span>
+                            <span class="summary-value" id="total-time">0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-details" id="results-details">
+                    <!-- Detailed results will be inserted here -->
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="downloadResults()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download Results
+                    </button>
+                    <button class="btn btn-secondary" onclick="retakeQuiz()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="1 4 1 10 7 10"/>
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                        </svg>
+                        Retake Quiz
+                    </button>
+                    <button class="btn btn-secondary" onclick="newQuiz()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="12" y1="18" x2="12" y2="12"/>
+                            <line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
+                        New Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">QuizCraft</span>
+                </div>
+                <p>Open-source quiz generator for students and educators. Built with ❤️ for learning.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#quiz-app">Get Started</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/yourusername/quizcraft" target="_blank">GitHub</a>
+                    <a href="https://github.com/yourusername/quizcraft/blob/main/README.md" target="_blank">Documentation</a>
+                    <a href="https://github.com/yourusername/quizcraft/issues" target="_blank">Report Issue</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">License (MIT)</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QuizCraft. Open source under MIT License.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
