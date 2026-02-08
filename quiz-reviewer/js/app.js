@@ -32,7 +32,7 @@ function displayQuizList(quizzes) {
     const quizList = document.getElementById('quiz-list');
     
     quizList.innerHTML = quizzes.map(quiz => `
-        <div class="quiz-card" onclick="selectQuiz('${quiz.id}')">
+    <button class="quiz-card" onclick="selectQuiz('${quiz.id}')" type="button">
             <div class="quiz-card-header">
                 <div class="quiz-icon">${quiz.icon}</div>
                 <div>
@@ -291,7 +291,6 @@ function displayResults(results) {
                     <div class="result-question">${idx + 1}. ${q.question}</div>
                 </div>
                 <div class="result-answer">Your answer: <strong>${userAnswerText}</strong></div>
-                ${!q.isCorrect ? `<div class="result-correct">Correct answer: ${correctAnswerText}</div>` : ''}
             </div>
         `;
     }).join('');
