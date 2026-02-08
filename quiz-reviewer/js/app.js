@@ -11,7 +11,7 @@ let quizData = null;
 async function loadQuizzes() {
     try {
         // Load the quiz data
-        const response = await fetch('quizzes/data.js');
+        const response = await fetch('data.js');
         const text = await response.text();
         
         // Execute the script to get QUIZZES
